@@ -3,22 +3,22 @@ pipeline{
 		stages{
 			stage('Build'){
 				steps{
-					echo"build completed successful"
+					echo"build completed successful jeswanth"
 					}
 				}
 			stage('Test'){
 				steps{
-					echo"test completed successful"
+					echo"test completed successful jeswanth"
 					}
 				}
 			stage('Package'){
 				steps{
-					echo"package completed successful"
+					echo"package completed successful jeswanth"
 					}
 				}
 			stage('Deploy'){
 				steps{
-					echo"deploy completed successful"
+					echo"deploy completed successful jeswanth"
 					}
 				}
 			}
