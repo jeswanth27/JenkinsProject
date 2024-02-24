@@ -6,8 +6,8 @@ pipeline{
 	stages{
 		stage('Build'){
 			steps{
-				sh 'pip3 install--user pipenv'
-				sh '/bitnami/jenkins/home/.local/bin/pipenv--rm||exit0'
+				sh 'pip3 install --user pipenv'
+				sh '/bitnami/jenkins/home/.local/bin/pipenv --rm || exit0'
 				sh '/bitnami/jenkins/home/.local/bin/pipenv install'
 			}
 		}
@@ -18,12 +18,12 @@ pipeline{
 			}
 		stage('Package'){
 			steps{
-				sh 'zip-rretailproject.zip.'
+				sh 'zip -r retailproject.zip.'
 				}
 			}
 		stage('Deploy'){
 			steps{
-				sh 'sshpass-p$LABS_PSWscp-oStrictHostKeyChecking=no-r.$LABS_USR@g02.itversity.com:/home/itv009820/retailproject'
+				sh 'sshpass -p $LABS_PSW scp -o StrictHostKeyChecking=no -r . $LABS_USR@g02.itversity.com:/home/itv009820/retailproject'
 				}
 			}
 		}
